@@ -83,5 +83,5 @@ def show_table():
     df2 = df.to_html(index=False) 
     return render_template("search_names.html", tables=[df2], titles=df.columns.values, decade_description=decade_description)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+#if __name__ == '__main__':
+#    app.run(host='0.0.0.0')
