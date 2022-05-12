@@ -30,7 +30,14 @@ def home():
 @app.post("/add")
 def add():
     title = request.form.get("title")
-    new_todo = Todo(title=title, complete=False)
+    gender = request.form.get("gender_select")
+
+    if gender == 'Male':
+        gender = False
+    else:
+        gender = True
+    
+    new_todo = Todo(title=title, complete=gender)
     db.session.add(new_todo)
     db.session.commit()
     return redirect(url_for("home"))
